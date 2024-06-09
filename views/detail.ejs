@@ -15,6 +15,12 @@
         <div class="history">
             <h2>History</h2>
             <ul>
+                <!-- 히스토리 리스트 (다른 작품들 목록) -->
+                <% if (artworks && artworks.length > 0) { %>
+                    <% artworks.forEach(art => { %>
+                        <li><%= art.art_name %> : <%= art.art_artist %></li>
+                    <% }); %>
+                <% } %>
             </ul>
         </div>
         <div class="main">
