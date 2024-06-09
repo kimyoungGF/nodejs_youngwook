@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Art Detail</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo-text">My Docent</h1>
+    </div>
+    
+    <div class="container">
+        <div class="history">
+            <h2>History</h2>
+            <ul>
+                <!-- 히스토리 리스트 (다른 작품들 목록) -->
+                <% if (artworks && artworks.length > 0) { %>
+                    <% artworks.forEach(art => { %>
+                        <li><%= art.art_name %> : <%= art.art_artist %></li>
+                    <% }); %>
+                <% } %>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="artwork">
+                <img src="<%= artwork.art_img_url %>" alt="<%= artwork.art_name %>">
+                <div>
+                    <p><strong>작품명:</strong> <%= artwork.art_name %></p>
+                    <p><strong>작가:</strong> <%= artwork.art_artist %></p>
+                </div>
+            </div>
+            <div class="description">
+                <textarea id="description"><%= artwork.art_description %></textarea>
+            </div>
+            <div id="audioPlayer">
+                <audio controls>
+                    <source src="<%= artwork.art_audio_url %>" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
