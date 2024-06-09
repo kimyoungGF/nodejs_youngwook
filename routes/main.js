@@ -28,6 +28,11 @@ router.get('/', async (req, res) => {
         const audioResponse = await axios.post(`${FASTAPI_URL2}/generate-audio`, { art_id: artId });
         artwork.art_audio_url = audioResponse.data.file_url;
 
+        // artworks 변수를 임시로 생성 (데모 목적)
+        const artworks = [
+            { art_name: "모나리자", art_artist: "레오나르도 다빈치" }
+        ];
+
 
         res.render('detail', { artwork, artworks });
     } catch (error) {
