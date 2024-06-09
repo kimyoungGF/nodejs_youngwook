@@ -30,9 +30,9 @@ router.get('/', async (req, res) => {
 
 
         // artworks 변수를 임시로 생성 (데모 목적)
-        const artworks = [
-            { art_name: "모나리자", art_artist: "레오나르도 다빈치" }
-        ];
+        //const artworks = [
+        //    { art_name: "모나리자", art_artist: "레오나르도 다빈치" }
+        //];
 
         res.render('detail', { artwork, artworks });
     } catch (error) {
